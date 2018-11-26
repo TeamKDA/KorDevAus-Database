@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{09517F56-D654-4646-B152-07E68F73B8DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{66F96E54-4F42-46BA-BEFD-5A00A1C2D78C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KorDevAus.Entities.Tests", "test\KorDevAus.Entities.Tests\KorDevAus.Entities.Tests.csproj", "{DBCA02FD-20BC-4C35-B363-1F8A33694352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KorDevAus.Orm.Tests", "test\KorDevAus.Orm.Tests\KorDevAus.Orm.Tests.csproj", "{D06F02A1-868F-4DEB-8A31-2CCEBE2B81D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KorDevAus.Entities", "src\KorDevAus.Entities\KorDevAus.Entities.csproj", "{20A7400C-B1A9-4897-A818-FB984F8C9918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KorDevAus.Orm", "src\KorDevAus.Orm\KorDevAus.Orm.csproj", "{40C80C8F-999A-45A9-8FBC-48A3D19C7C2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KorDevAus.Orm.ConsoleApp", "src\KorDevAus.Orm.ConsoleApp\KorDevAus.Orm.ConsoleApp.csproj", "{8F75EED9-0810-40AD-89D2-8F5BAB5B340B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBCA02FD-20BC-4C35-B363-1F8A33694352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBCA02FD-20BC-4C35-B363-1F8A33694352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBCA02FD-20BC-4C35-B363-1F8A33694352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBCA02FD-20BC-4C35-B363-1F8A33694352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D06F02A1-868F-4DEB-8A31-2CCEBE2B81D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D06F02A1-868F-4DEB-8A31-2CCEBE2B81D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D06F02A1-868F-4DEB-8A31-2CCEBE2B81D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D06F02A1-868F-4DEB-8A31-2CCEBE2B81D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A7400C-B1A9-4897-A818-FB984F8C9918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A7400C-B1A9-4897-A818-FB984F8C9918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A7400C-B1A9-4897-A818-FB984F8C9918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A7400C-B1A9-4897-A818-FB984F8C9918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40C80C8F-999A-45A9-8FBC-48A3D19C7C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C80C8F-999A-45A9-8FBC-48A3D19C7C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C80C8F-999A-45A9-8FBC-48A3D19C7C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C80C8F-999A-45A9-8FBC-48A3D19C7C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F75EED9-0810-40AD-89D2-8F5BAB5B340B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F75EED9-0810-40AD-89D2-8F5BAB5B340B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F75EED9-0810-40AD-89D2-8F5BAB5B340B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F75EED9-0810-40AD-89D2-8F5BAB5B340B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DBCA02FD-20BC-4C35-B363-1F8A33694352} = {66F96E54-4F42-46BA-BEFD-5A00A1C2D78C}
+		{D06F02A1-868F-4DEB-8A31-2CCEBE2B81D4} = {66F96E54-4F42-46BA-BEFD-5A00A1C2D78C}
+		{20A7400C-B1A9-4897-A818-FB984F8C9918} = {09517F56-D654-4646-B152-07E68F73B8DB}
+		{40C80C8F-999A-45A9-8FBC-48A3D19C7C2C} = {09517F56-D654-4646-B152-07E68F73B8DB}
+		{8F75EED9-0810-40AD-89D2-8F5BAB5B340B} = {09517F56-D654-4646-B152-07E68F73B8DB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85AE841F-05A7-4A6A-8395-9CCAC8B85E4B}
+	EndGlobalSection
+EndGlobal
