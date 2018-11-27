@@ -24,8 +24,7 @@ namespace KorDevAus.Orm.Tests
         public void Given_Type_Should_HaveConstructors()
         {
             typeof(KdaDbContext)
-                .Should().HaveDefaultConstructor()
-                    .And.HaveConstructor(new[] { typeof(DbContextOptions<KdaDbContext>) });
+                .Should().HaveConstructor(new[] { typeof(DbContextOptions<KdaDbContext>) });
         }
 
         [TestMethod]

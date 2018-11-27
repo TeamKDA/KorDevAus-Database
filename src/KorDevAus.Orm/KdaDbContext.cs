@@ -13,14 +13,6 @@ namespace KorDevAus.Orm
         /// <summary>
         /// Initializes a new instance of the <see cref="KdaDbContext"/> class.
         /// </summary>
-        public KdaDbContext()
-            : base()
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="KdaDbContext"/> class.
-        /// </summary>
         /// <param name="options"><see cref="DbContextOptions{KdaDbContext}"/> instance.</param>
         public KdaDbContext(DbContextOptions<KdaDbContext> options)
             : base(options)

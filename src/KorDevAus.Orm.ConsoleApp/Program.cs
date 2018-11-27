@@ -7,7 +7,7 @@ namespace KorDevAus.Orm.ConsoleApp
     {
         static void Main(string[] args)
         {
-            using (var context = new DbContextFactory<KdaDbContext>().CreateDbContext(args))
+            using (var context = new KdaDbContextFactory().CreateDbContext(args))
             {
                 var events = context.Events.AsQueryable().Count();
                 var groups = context.Groups.AsQueryable().Count();

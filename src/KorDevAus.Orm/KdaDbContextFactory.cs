@@ -7,10 +7,9 @@ using Microsoft.Extensions.Configuration;
 namespace KorDevAus.Orm
 {
     /// <summary>
-    /// This represents the factory entity to create <see cref="DbContext"/> instance.
+    /// This represents the factory entity to create <see cref="KdaDbContext"/> instance.
     /// </summary>
-    /// <typeparam name="TContext">Type of <see cref="DbContext"/>.</typeparam>
-    public class DbContextFactory<TContext> : IDesignTimeDbContextFactory<TContext> where TContext : DbContext
+    public class KdaDbContextFactory : IDesignTimeDbContextFactory<KdaDbContext>
     {
         private const string AppSettingsJson = "appsettings.json";
         private const string KdaDbConnection = "KorDevAus";
@@ -21,23 +20,23 @@ namespace KorDevAus.Orm
         /// Creates a new instance of a derived context.
         /// </summary>
         /// <returns>A new instance of the derived context.</returns>
-        public TContext CreateDbContext()
+        public KdaDbContext CreateDbContext()
         {
             return this.CreateDbContext(null);
         }
 
         /// <inheritdoc />
-        public TContext CreateDbContext(string[] args)
+        public KdaDbContext CreateDbContext(string[] args)
         {
             if (string.IsNullOrWhiteSpace(this._connstring))
             {
                 this.LoadConnectionString(args);
             }
 
-            var builder = new DbContextOptionsBuilder<TContext>()
+            var builder = new DbContextOptionsBuilder<KdaDbContext>()
                               .UseSqlServer(this._connstring);
 
-            var dbContext = (TContext)Activator.CreateInstance(typeof(TContext), builder.Options);
+            var dbContext = (KdaDbContext)Activator.CreateInstance(typeof(KdaDbContext), builder.Options);
 
             return dbContext;
         }

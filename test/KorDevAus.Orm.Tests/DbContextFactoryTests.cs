@@ -15,7 +15,7 @@ namespace KorDevAus.Orm.Tests
         [TestMethod]
         public void Given_Type_Should_BePublicAndImplementIDesignTimeDbContextFactory()
         {
-            typeof(DbContextFactory<KdaDbContext>)
+            typeof(KdaDbContextFactory)
                 .Should().HaveAccessModifier(CSharpAccessModifier.Public)
                     .And.Should().NotBeAbstract()
                     .And.Implement<IDesignTimeDbContextFactory<KdaDbContext>>();
@@ -24,18 +24,18 @@ namespace KorDevAus.Orm.Tests
         [TestMethod]
         public void Given_Type_Should_HaveConstructors()
         {
-            typeof(DbContextFactory<KdaDbContext>)
+            typeof(KdaDbContextFactory)
                 .Should().HaveDefaultConstructor();
         }
 
         [TestMethod]
         public void Given_Type_Should_HaveMethod()
         {
-            typeof(DbContextFactory<KdaDbContext>)
+            typeof(KdaDbContextFactory)
                 .Should().HaveMethod("CreateDbContext", new List<Type>())
                     .Which.Should().Return<KdaDbContext>();
 
-            typeof(DbContextFactory<KdaDbContext>)
+            typeof(KdaDbContextFactory)
                 .Should().HaveMethod("CreateDbContext", new[] { typeof(string[]) })
                     .Which.Should().Return<KdaDbContext>();
         }
