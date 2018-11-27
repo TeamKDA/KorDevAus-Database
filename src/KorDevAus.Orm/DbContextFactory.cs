@@ -12,6 +12,9 @@ namespace KorDevAus.Orm
     /// <typeparam name="TContext">Type of <see cref="DbContext"/>.</typeparam>
     public class DbContextFactory<TContext> : IDesignTimeDbContextFactory<TContext> where TContext : DbContext
     {
+        private const string AppSettingsJson = "appsettings.json";
+        private const string KdaDbConnection = "KorDevAus";
+
         private string _connstring;
 
         /// <summary>
@@ -42,12 +45,12 @@ namespace KorDevAus.Orm
         private void LoadConnectionString(string[] args)
         {
             var config = new ConfigurationBuilder()
-                             .AddJsonFile("appsettings.json", optional: true)
+                             .AddJsonFile(AppSettingsJson, optional: true)
                              .AddEnvironmentVariables()
                              .AddCommandLine(args)
                              .Build();
 
-            this._connstring = config.GetConnectionString("KorDevAus");
+            this._connstring = config.GetConnectionString(KdaDbConnection);
         }
     }
 }
