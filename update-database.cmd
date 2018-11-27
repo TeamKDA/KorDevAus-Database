@@ -1,6 +1,6 @@
 @echo off
 
-rem USAGE database-update-sqlserver.bat
+rem USAGE update-database.cmd
 
 SET DIR=%~dp0%
 
