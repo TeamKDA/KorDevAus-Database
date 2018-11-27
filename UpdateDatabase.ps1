@@ -10,6 +10,6 @@ $dir = $pwd.Path
 
 cd $DbContextPath
 
-dotnet ef database update
+dotnet ef database update --no-build
 
 cd $dir
