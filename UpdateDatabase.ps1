@@ -3,13 +3,14 @@
 #
 
 Param(
-    [string] [Parameter(Mandatory=$true)] $DbContextPath
+    [string] [Parameter(Mandatory=$true)] $DbContextPath,
+    [string] [Parameter(Mandatory=$false)] $BuildConfiguration = "Release"
 )
 
 $dir = $pwd.Path
 
 cd $DbContextPath
 
-dotnet ef database update --no-build
+dotnet ef database update -c $BuildConfiguration --no-build
 
 cd $dir
