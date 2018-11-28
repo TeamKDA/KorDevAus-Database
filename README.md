@@ -1,6 +1,6 @@
 # KorDevAus Database #
 
-This provides database structure by code-first approach.
+This provides database structure by code-first approach. This is used for database migration and NuGet packaging.
 
 
 ## License ##
