@@ -11,6 +11,6 @@ $dir = $pwd.Path
 
 cd $DbContextPath
 
-dotnet ef database update -c $BuildConfiguration --no-build
+dotnet ef database update --configuration $BuildConfiguration --no-build
 
 cd $dir
