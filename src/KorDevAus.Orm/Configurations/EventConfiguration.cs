@@ -24,7 +24,7 @@ namespace KorDevAus.Orm.Configurations
             builder.Property(p => p.VenueId).HasColumnName("VenueId").IsRequired(false);
 
             // Table
-            builder.ToTable("Event");
+            builder.ToTable("Events");
 
             // Relations
             builder.HasOne(p => p.Venue)

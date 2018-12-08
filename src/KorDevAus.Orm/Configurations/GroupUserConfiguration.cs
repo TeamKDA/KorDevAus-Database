@@ -22,7 +22,7 @@ namespace KorDevAus.Orm.Configurations
             builder.Property(p => p.DateJoined).HasColumnName("DateJoined").IsRequired().HasDefaultValueSql("GETDATE()");
 
             // Table
-            builder.ToTable("GroupUser");
+            builder.ToTable("GroupUsers");
 
             // Relations
             builder.HasOne(p => p.Group)

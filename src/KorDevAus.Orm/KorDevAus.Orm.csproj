@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netcoreapp2.1</TargetFrameworks>
+    <!-- <TargetFramework>netcoreapp2.1</TargetFramework> -->
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://github.com/TeamKDA/KorDevAus/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Team KDA</Copyright>

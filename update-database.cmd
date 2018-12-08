@@ -9,7 +9,7 @@ dotnet build
 
 cd src/KorDevAus.Orm
 
-dotnet ef database update
+dotnet ef database update --framework netcoreapp2.1
 
 goto finish
 

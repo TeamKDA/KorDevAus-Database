@@ -22,7 +22,7 @@ namespace KorDevAus.Orm.Configurations
             builder.Property(p => p.Status).HasColumnName("Status").IsRequired();
 
             // Table
-            builder.ToTable("Rsvp");
+            builder.ToTable("Rsvps");
 
             // Relations
             builder.HasOne(p => p.Event)

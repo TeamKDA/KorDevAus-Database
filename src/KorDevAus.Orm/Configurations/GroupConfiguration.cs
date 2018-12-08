@@ -21,7 +21,7 @@ namespace KorDevAus.Orm.Configurations
             builder.Property(p => p.Slug).HasColumnName("Slug").IsRequired().HasMaxLength(128);
 
             // Table
-            builder.ToTable("Group");
+            builder.ToTable("Groups");
 
             // Relations
         }

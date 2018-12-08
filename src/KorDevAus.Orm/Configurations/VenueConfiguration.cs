@@ -26,7 +26,7 @@ namespace KorDevAus.Orm.Configurations
             builder.Property(p => p.Country).HasColumnName("Country").IsRequired().HasMaxLength(32);
 
             // Table
-            builder.ToTable("Venue");
+            builder.ToTable("Venues");
 
             // Relations
         }
