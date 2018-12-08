@@ -4,14 +4,16 @@ using KorDevAus.Orm;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KorDevAus.Orm.Migrations
 {
     [DbContext(typeof(KdaDbContext))]
-    partial class KdaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181208012540_SetDefaultValuesOnTables")]
+    partial class SetDefaultValuesOnTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,11 +99,6 @@ namespace KorDevAus.Orm.Migrations
                         .HasColumnName("Name")
                         .HasMaxLength(128);
 
-                    b.Property<string>("Slug")
-                        .IsRequired()
-                        .HasColumnName("Slug")
-                        .HasMaxLength(128);
-
                     b.Property<Guid>("UpdatedBy")
                         .HasColumnName("UpdatedBy");
 
@@ -177,11 +174,6 @@ namespace KorDevAus.Orm.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("Name")
-                        .HasMaxLength(128);
-
-                    b.Property<string>("Slug")
-                        .IsRequired()
-                        .HasColumnName("Slug")
                         .HasMaxLength(128);
 
                     b.Property<Guid>("UpdatedBy")

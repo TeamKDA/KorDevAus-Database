@@ -18,6 +18,11 @@ namespace KorDevAus.Entities
         public virtual string Description { get; set; }
 
         /// <summary>
+        /// Gets or sets the slug.
+        /// </summary>
+        public virtual string Slug { get; set; }
+
+        /// <summary>
         /// Gets or sets the list of <see cref="GroupUser"/> instances.
         /// </summary>
         public virtual List<GroupUser> GroupUsers { get; set; }

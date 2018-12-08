@@ -23,9 +23,9 @@ namespace KorDevAus.Orm.Configurations
             // Properties
             builder.Property(p => p.Id).HasColumnName("Id").IsRequired();
 
-            builder.Property(p => p.DateCreated).HasColumnName("DateCreated").IsRequired();
+            builder.Property(p => p.DateCreated).HasColumnName("DateCreated").IsRequired().HasDefaultValueSql("GETDATE()");
             builder.Property(p => p.CreatedBy).HasColumnName("CreatedBy").IsRequired();
-            builder.Property(p => p.DateUpdated).HasColumnName("DateUpdated").IsRequired();
+            builder.Property(p => p.DateUpdated).HasColumnName("DateUpdated").IsRequired().HasDefaultValueSql("GETDATE()");
             builder.Property(p => p.UpdatedBy).HasColumnName("UpdatedBy").IsRequired();
 
             // Table

@@ -17,6 +17,7 @@ namespace KorDevAus.Orm.Configurations
 
             builder.Property(p => p.Name).HasColumnName("Name").IsRequired().HasMaxLength(128);
             builder.Property(p => p.Description).HasColumnName("Description").IsRequired(false);
+            builder.Property(p => p.Slug).HasColumnName("Slug").IsRequired().HasMaxLength(128);
 
             // Table
             builder.ToTable("Meetup");
