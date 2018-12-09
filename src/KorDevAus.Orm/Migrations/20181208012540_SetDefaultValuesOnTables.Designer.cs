@@ -4,14 +4,16 @@ using KorDevAus.Orm;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KorDevAus.Orm.Migrations
 {
     [DbContext(typeof(KdaDbContext))]
-    partial class KdaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181208012540_SetDefaultValuesOnTables")]
+    partial class SetDefaultValuesOnTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,7 +69,7 @@ namespace KorDevAus.Orm.Migrations
 
                     b.HasIndex("VenueId");
 
-                    b.ToTable("Events");
+                    b.ToTable("Event");
                 });
 
             modelBuilder.Entity("KorDevAus.Entities.Group", b =>
@@ -97,17 +99,12 @@ namespace KorDevAus.Orm.Migrations
                         .HasColumnName("Name")
                         .HasMaxLength(128);
 
-                    b.Property<string>("Slug")
-                        .IsRequired()
-                        .HasColumnName("Slug")
-                        .HasMaxLength(128);
-
                     b.Property<Guid>("UpdatedBy")
                         .HasColumnName("UpdatedBy");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Groups");
+                    b.ToTable("Group");
                 });
 
             modelBuilder.Entity("KorDevAus.Entities.GroupUser", b =>
@@ -149,7 +146,7 @@ namespace KorDevAus.Orm.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("GroupUsers");
+                    b.ToTable("GroupUser");
                 });
 
             modelBuilder.Entity("KorDevAus.Entities.Meetup", b =>
@@ -179,17 +176,12 @@ namespace KorDevAus.Orm.Migrations
                         .HasColumnName("Name")
                         .HasMaxLength(128);
 
-                    b.Property<string>("Slug")
-                        .IsRequired()
-                        .HasColumnName("Slug")
-                        .HasMaxLength(128);
-
                     b.Property<Guid>("UpdatedBy")
                         .HasColumnName("UpdatedBy");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Meetups");
+                    b.ToTable("Meetup");
                 });
 
             modelBuilder.Entity("KorDevAus.Entities.MeetupEvent", b =>
@@ -226,7 +218,7 @@ namespace KorDevAus.Orm.Migrations
 
                     b.HasIndex("MeetupId");
 
-                    b.ToTable("MeetupEvents");
+                    b.ToTable("MeetupEvent");
                 });
 
             modelBuilder.Entity("KorDevAus.Entities.Member", b =>
@@ -273,7 +265,7 @@ namespace KorDevAus.Orm.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Members");
+                    b.ToTable("Member");
                 });
 
             modelBuilder.Entity("KorDevAus.Entities.Rsvp", b =>
@@ -319,7 +311,7 @@ namespace KorDevAus.Orm.Migrations
 
                     b.HasIndex("MemberId");
 
-                    b.ToTable("Rsvps");
+                    b.ToTable("Rsvp");
                 });
 
             modelBuilder.Entity("KorDevAus.Entities.User", b =>
@@ -373,7 +365,7 @@ namespace KorDevAus.Orm.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("KorDevAus.Entities.Venue", b =>
@@ -437,7 +429,7 @@ namespace KorDevAus.Orm.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Venues");
+                    b.ToTable("Venue");
                 });
 
             modelBuilder.Entity("KorDevAus.Entities.Waitlist", b =>
@@ -479,7 +471,7 @@ namespace KorDevAus.Orm.Migrations
 
                     b.HasIndex("MemberId");
 
-                    b.ToTable("Waitlists");
+                    b.ToTable("Waitlist");
                 });
 
             modelBuilder.Entity("KorDevAus.Entities.Event", b =>

@@ -19,10 +19,10 @@ namespace KorDevAus.Orm.Configurations
             // Properties
             builder.Property(p => p.GroupId).HasColumnName("GroupId").IsRequired();
             builder.Property(p => p.UserId).HasColumnName("UserId").IsRequired();
-            builder.Property(p => p.DateJoined).HasColumnName("DateJoined").IsRequired();
+            builder.Property(p => p.DateJoined).HasColumnName("DateJoined").IsRequired().HasDefaultValueSql("GETDATE()");
 
             // Table
-            builder.ToTable("GroupUser");
+            builder.ToTable("GroupUsers");
 
             // Relations
             builder.HasOne(p => p.Group)

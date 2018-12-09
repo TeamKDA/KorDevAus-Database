@@ -20,7 +20,7 @@ namespace KorDevAus.Orm.Configurations
             builder.Property(p => p.EventId).HasColumnName("EventId").IsRequired();
 
             // Table
-            builder.ToTable("MeetupEvent");
+            builder.ToTable("MeetupEvents");
 
             // Relations
             builder.HasOne(p => p.Meetup)

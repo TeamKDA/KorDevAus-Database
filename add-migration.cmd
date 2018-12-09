@@ -15,7 +15,7 @@ dotnet build
 
 cd src\KorDevAus.Orm
 
-dotnet ef migrations add %MIGRATION_NAME%
+dotnet ef migrations add %MIGRATION_NAME% --framework netcoreapp2.1
 
 goto finish
 

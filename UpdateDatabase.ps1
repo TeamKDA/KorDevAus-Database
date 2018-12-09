@@ -11,6 +11,6 @@ $dir = $pwd.Path
 
 cd $DbContextPath
 
-dotnet ef database update --configuration $BuildConfiguration --no-build
+dotnet ef database update --configuration $BuildConfiguration --framework netcoreapp2.1 --no-build
 
 cd $dir

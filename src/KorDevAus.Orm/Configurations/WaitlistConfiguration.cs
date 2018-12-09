@@ -21,7 +21,7 @@ namespace KorDevAus.Orm.Configurations
             builder.Property(p => p.IsShortlisted).HasColumnName("IsShortlisted").IsRequired().HasDefaultValue(false);
 
             // Table
-            builder.ToTable("Waitlist");
+            builder.ToTable("Waitlists");
 
             // Relations
             builder.HasOne(p => p.Event)

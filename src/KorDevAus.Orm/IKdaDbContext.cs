@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+
 using KorDevAus.Entities;
 
 using Microsoft.EntityFrameworkCore;
@@ -59,5 +62,19 @@ namespace KorDevAus.Orm
         /// Gets or sets the set of <see cref="Waitlist"/> records.
         /// </summary>
         DbSet<Waitlist> Waitlists { get; set; }
+
+        /// <summary>
+        /// Creates <see cref="DbSet{TEntity}"/> that can be used to query and save instances of TEntity.
+        /// </summary>
+        /// <typeparam name="TEntity">Type of entity.</typeparam>
+        /// <returns><see cref="DbSet{TEntity}"/> instance.</returns>
+        DbSet<TEntity> Set<TEntity>() where TEntity : class;
+
+        /// <summary>
+        /// Saves all changes made in this context to the database.
+        /// </summary>
+        /// <param name="cancellationToken"><see cref="CancellationToken"/> to observe while waiting for the task to complete.</param>
+        /// <returns>Result contains the number of state entries written to the database.</returns>
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 }

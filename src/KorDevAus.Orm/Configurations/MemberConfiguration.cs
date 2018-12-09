@@ -19,10 +19,10 @@ namespace KorDevAus.Orm.Configurations
             builder.Property(p => p.MeetupId).HasColumnName("MeetupId").IsRequired();
             builder.Property(p => p.UserId).HasColumnName("UserId").IsRequired();
             builder.Property(p => p.IsOrganiser).HasColumnName("IsOrganiser").IsRequired().HasDefaultValue(false);
-            builder.Property(p => p.DateJoined).HasColumnName("DateJoined").IsRequired();
+            builder.Property(p => p.DateJoined).HasColumnName("DateJoined").IsRequired().HasDefaultValueSql("GETDATE()");
 
             // Table
-            builder.ToTable("Member");
+            builder.ToTable("Members");
 
             // Relations
             builder.HasOne(p => p.Meetup)

@@ -25,7 +25,7 @@ namespace KorDevAus.Orm.Configurations
             builder.Property(p => p.MailChimpId).HasColumnName("MailChimpId").IsRequired();
 
             // Table
-            builder.ToTable("User");
+            builder.ToTable("Users");
 
             // Relations
         }

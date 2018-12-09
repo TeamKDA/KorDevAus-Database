@@ -18,9 +18,10 @@ namespace KorDevAus.Orm.Configurations
             // Properties
             builder.Property(p => p.Name).HasColumnName("Name").IsRequired().HasMaxLength(128);
             builder.Property(p => p.Description).HasColumnName("Description").IsRequired(false);
+            builder.Property(p => p.Slug).HasColumnName("Slug").IsRequired().HasMaxLength(128);
 
             // Table
-            builder.ToTable("Group");
+            builder.ToTable("Groups");
 
             // Relations
         }
