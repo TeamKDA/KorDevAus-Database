@@ -31,15 +31,18 @@ namespace KorDevAus.Repositories
             this.Entities = this._context.Set<T>();
         }
 
+        /// <summary>
+        /// Gets the sets of entities.
+        /// </summary>
         protected DbSet<T> Entities { get; }
 
         /// <inheritdoc />
         public async Task<List<T>> GetAllAsync()
         {
             var entities = await this.Entities
-                                      .AsQueryable()
-                                      .ToListAsync()
-                                      .ConfigureAwait(false);
+                                     .AsQueryable()
+                                     .ToListAsync()
+                                     .ConfigureAwait(false);
 
             return entities;
         }
