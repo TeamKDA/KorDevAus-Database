@@ -1,5 +1,12 @@
-﻿using KorDevAus.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+using KorDevAus.Entities;
 using KorDevAus.Orm;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace KorDevAus.Repositories
 {
@@ -15,6 +22,31 @@ namespace KorDevAus.Repositories
         public UserRepository(IKdaDbContext context)
             : base(context)
         {
+        }
+
+        /// <inheritdoc />
+        public override async Task<List<User>> GetAllAsync()
+        {
+            var users = await this.Entities
+                                  .Include(p => p.GroupUsers)
+                                      .ThenInclude(p => p.Group)
+                                  .AsQueryable()
+                                  .ToListAsync()
+                                  .ConfigureAwait(false);
+
+            return users;
+        }
+
+        /// <inheritdoc />
+        public override async Task<User> GetAsync(Guid id)
+        {
+            var user = await this.Entities
+                                 .Include(p => p.GroupUsers)
+                                     .ThenInclude(p => p.Group)
+                                 .SingleOrDefaultAsync(p => p.Id == id)
+                                 .ConfigureAwait(false);
+
+            return user;
         }
     }
 }

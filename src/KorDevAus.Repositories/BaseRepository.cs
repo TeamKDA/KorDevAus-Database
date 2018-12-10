@@ -37,7 +37,7 @@ namespace KorDevAus.Repositories
         protected DbSet<T> Entities { get; }
 
         /// <inheritdoc />
-        public async Task<List<T>> GetAllAsync()
+        public virtual async Task<List<T>> GetAllAsync()
         {
             var entities = await this.Entities
                                      .AsQueryable()
@@ -48,7 +48,7 @@ namespace KorDevAus.Repositories
         }
 
         /// <inheritdoc />
-        public async Task<T> GetAsync(Guid id)
+        public virtual async Task<T> GetAsync(Guid id)
         {
             var entity = await this.Entities
                                    .SingleOrDefaultAsync(p => p.Id == id)
@@ -58,7 +58,7 @@ namespace KorDevAus.Repositories
         }
 
         /// <inheritdoc />
-        public async Task InsertAsync(T entity, bool commit = true)
+        public virtual async Task InsertAsync(T entity, bool commit = true)
         {
             if (entity == null)
             {
@@ -74,7 +74,7 @@ namespace KorDevAus.Repositories
         }
 
         /// <inheritdoc />
-        public async Task InsertRangeAsync(IEnumerable<T> entities, bool commit = true)
+        public virtual async Task InsertRangeAsync(IEnumerable<T> entities, bool commit = true)
         {
             if (entities == null)
             {
@@ -90,7 +90,7 @@ namespace KorDevAus.Repositories
         }
 
         /// <inheritdoc />
-        public async Task UpdateAsync(T entity, bool commit = true)
+        public virtual async Task UpdateAsync(T entity, bool commit = true)
         {
             if (entity == null)
             {
@@ -106,7 +106,7 @@ namespace KorDevAus.Repositories
         }
 
         /// <inheritdoc />
-        public async Task UpdateRangeAsync(IEnumerable<T> entities, bool commit = true)
+        public virtual async Task UpdateRangeAsync(IEnumerable<T> entities, bool commit = true)
         {
             if (entities == null)
             {
@@ -122,7 +122,7 @@ namespace KorDevAus.Repositories
         }
 
         /// <inheritdoc />
-        public async Task UpsertAsync(T entity, bool commit = true)
+        public virtual async Task UpsertAsync(T entity, bool commit = true)
         {
             if (entity == null)
             {
@@ -146,7 +146,7 @@ namespace KorDevAus.Repositories
         }
 
         /// <inheritdoc />
-        public async Task UpsertRangeAsync(IEnumerable<T> entities, bool commit = true)
+        public virtual async Task UpsertRangeAsync(IEnumerable<T> entities, bool commit = true)
         {
             if (entities == null)
             {
@@ -165,7 +165,7 @@ namespace KorDevAus.Repositories
         }
 
         /// <inheritdoc />
-        public async Task DeleteAsync(T entity, bool commit = true)
+        public virtual async Task DeleteAsync(T entity, bool commit = true)
         {
             if (entity == null)
             {
@@ -181,7 +181,7 @@ namespace KorDevAus.Repositories
         }
 
         /// <inheritdoc />
-        public async Task DeleteRangeAsync(IEnumerable<T> entities, bool commit = true)
+        public virtual async Task DeleteRangeAsync(IEnumerable<T> entities, bool commit = true)
         {
             if (entities == null)
             {
