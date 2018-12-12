@@ -40,7 +40,7 @@ namespace KorDevAus.Entities
         /// <summary>
         /// Gets or sets the ID from MailChimp.
         /// </summary>
-        public virtual Guid MailChimpId { get; set; }
+        public virtual string MailChimpId { get; set; }
 
         /// <summary>
         /// Gets or sets the list of <see cref="Member"/> instances.

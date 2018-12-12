@@ -4,14 +4,16 @@ using KorDevAus.Orm;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KorDevAus.Orm.Migrations
 {
     [DbContext(typeof(KdaDbContext))]
-    partial class KdaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181212113725_RemoveMailChimpIdFromUsers")]
+    partial class RemoveMailChimpIdFromUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -346,13 +348,11 @@ namespace KorDevAus.Orm.Migrations
 
                     b.Property<string>("DisplayName")
                         .IsRequired()
-                        .HasColumnName("DisplayName")
-                        .HasMaxLength(256);
+                        .HasColumnName("DisplayName");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnName("Email")
-                        .HasMaxLength(256);
+                        .HasColumnName("Email");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -363,11 +363,6 @@ namespace KorDevAus.Orm.Migrations
                         .IsRequired()
                         .HasColumnName("LastName")
                         .HasMaxLength(128);
-
-                    b.Property<string>("MailChimpId")
-                        .IsRequired()
-                        .HasColumnName("MailChimpId")
-                        .HasMaxLength(64);
 
                     b.Property<string>("ProfileImageUrl")
                         .HasColumnName("ProfileImageUrl");

@@ -18,11 +18,11 @@ namespace KorDevAus.Orm.Configurations
             // Properties
             builder.Property(p => p.FirstName).HasColumnName("FirstName").IsRequired().HasMaxLength(128);
             builder.Property(p => p.LastName).HasColumnName("LastName").IsRequired().HasMaxLength(128);
-            builder.Property(p => p.DisplayName).HasColumnName("DisplayName").IsRequired();
-            builder.Property(p => p.Email).HasColumnName("Email").IsRequired();
+            builder.Property(p => p.DisplayName).HasColumnName("DisplayName").IsRequired().HasMaxLength(256);
+            builder.Property(p => p.Email).HasColumnName("Email").IsRequired().HasMaxLength(256);
             builder.Property(p => p.ProfileImageUrl).HasColumnName("ProfileImageUrl").IsRequired(false);
             builder.Property(p => p.ActiveDirectoryId).HasColumnName("ActiveDirectoryId").IsRequired();
-            builder.Property(p => p.MailChimpId).HasColumnName("MailChimpId").IsRequired();
+            builder.Property(p => p.MailChimpId).HasColumnName("MailChimpId").IsRequired().HasMaxLength(64);
 
             // Table
             builder.ToTable("Users");

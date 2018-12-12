@@ -54,7 +54,7 @@ namespace KorDevAus.Entities.Tests
                         .And.Subject.PropertyType.IsPublic.Should().BeTrue();
 
             typeof(User)
-                .Should().HaveProperty<Guid>("MailChimpId")
+                .Should().HaveProperty<string>("MailChimpId")
                     .Which.Should().BeVirtual()
                         .And.Subject.PropertyType.IsPublic.Should().BeTrue();
 
