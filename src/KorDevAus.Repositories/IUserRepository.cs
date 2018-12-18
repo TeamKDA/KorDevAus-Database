@@ -1,4 +1,6 @@
-﻿using KorDevAus.Entities;
+﻿using System.Threading.Tasks;
+
+using KorDevAus.Entities;
 
 namespace KorDevAus.Repositories
 {
@@ -7,5 +9,11 @@ namespace KorDevAus.Repositories
     /// </summary>
     public interface IUserRepository : IRepository<User>
     {
+        /// <summary>
+        /// Gets the <see cref="User"/> instance with the given email.
+        /// </summary>
+        /// <param name="email">Email address.</param>
+        /// <returns>Returns the <see cref="User"/> instance with the given email.</returns>
+        Task<User> GetByEmailAsync(string email);
     }
 }
