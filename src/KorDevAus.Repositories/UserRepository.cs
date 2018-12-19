@@ -52,6 +52,20 @@ namespace KorDevAus.Repositories
         }
 
         /// <inheritdoc />
+        public async Task<List<User>> GetByEmailsAsync(IEnumerable<string> emails)
+        {
+            var users = await this.Entities
+                                  .AsNoTracking()
+                                  .Include(p => p.GroupUsers)
+                                      .ThenInclude(p => p.Group)
+                                  .Where(p => emails.Contains(p.Email, StringComparer.CurrentCultureIgnoreCase))
+                                  .ToListAsync()
+                                  .ConfigureAwait(false);
+
+            return users;
+        }
+
+        /// <inheritdoc />
         public async Task<User> GetByEmailAsync(string email)
         {
             var user = await this.Entities

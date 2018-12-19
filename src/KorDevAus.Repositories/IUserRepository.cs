@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using KorDevAus.Entities;
 
@@ -9,6 +10,13 @@ namespace KorDevAus.Repositories
     /// </summary>
     public interface IUserRepository : IRepository<User>
     {
+        /// <summary>
+        /// Gets the list of the <see cref="User"/> instances.
+        /// </summary>
+        /// <param name="emails">List of email addresses.</param>
+        /// <returns>Returns the list of the <see cref="User"/> instances.</returns>
+        Task<List<User>> GetByEmailsAsync(IEnumerable<string> emails);
+
         /// <summary>
         /// Gets the <see cref="User"/> instance with the given email.
         /// </summary>
