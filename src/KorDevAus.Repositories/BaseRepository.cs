@@ -131,14 +131,27 @@ namespace KorDevAus.Repositories
                 throw new ArgumentNullException(nameof(entity));
             }
 
-            var item = await this.GetAsync(entity.Id).ConfigureAwait(false);
-            if (item == null)
+            var entry = this._context.Entry(entity);
+            switch (entry.State)
             {
-                await this.InsertAsync(entity, commit).ConfigureAwait(false);
-            }
-            else
-            {
-                await this.UpdateAsync(entity, commit).ConfigureAwait(false);
+                case EntityState.Added:
+                case EntityState.Detached:
+                    await this.InsertAsync(entity, commit).ConfigureAwait(false);
+
+                    break;
+
+                case EntityState.Modified:
+                    await this.UpdateAsync(entity, commit).ConfigureAwait(false);
+
+                    break;
+
+                case EntityState.Unchanged:
+                    //item already in db no need to do anything
+
+                    break;
+
+                default:
+                    throw new InvalidOperationException("Invalid entry state");
             }
 
             if (commit)

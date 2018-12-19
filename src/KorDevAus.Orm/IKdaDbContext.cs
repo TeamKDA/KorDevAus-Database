@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using KorDevAus.Entities;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace KorDevAus.Orm
 {
@@ -69,6 +70,14 @@ namespace KorDevAus.Orm
         /// <typeparam name="TEntity">Type of entity.</typeparam>
         /// <returns><see cref="DbSet{TEntity}"/> instance.</returns>
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
+
+        /// <summary>
+        /// Gets the <see cref="EntityEntry{TEntity}"/> for the given entity. The entry provides access to change tracking information and operations for the entity.
+        /// </summary>
+        /// <typeparam name="TEntity">Type of entity.</typeparam>
+        /// <param name="entity">Entity object.</param>
+        /// <returns><see cref="EntityEntry{TEntity}"/> instance.</returns>
+        EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
 
         /// <summary>
         /// Saves all changes made in this context to the database.
