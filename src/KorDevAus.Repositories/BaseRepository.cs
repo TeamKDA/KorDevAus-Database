@@ -40,6 +40,7 @@ namespace KorDevAus.Repositories
         public virtual async Task<List<T>> GetAllAsync()
         {
             var entities = await this.Entities
+                                     .AsNoTracking()
                                      .AsQueryable()
                                      .ToListAsync()
                                      .ConfigureAwait(false);
@@ -51,6 +52,7 @@ namespace KorDevAus.Repositories
         public virtual async Task<T> GetAsync(Guid id)
         {
             var entity = await this.Entities
+                                   .AsNoTracking()
                                    .SingleOrDefaultAsync(p => p.Id == id)
                                    .ConfigureAwait(false);
 

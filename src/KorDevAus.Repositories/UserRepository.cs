@@ -28,6 +28,7 @@ namespace KorDevAus.Repositories
         public override async Task<List<User>> GetAllAsync()
         {
             var users = await this.Entities
+                                  .AsNoTracking()
                                   .Include(p => p.GroupUsers)
                                       .ThenInclude(p => p.Group)
                                   .AsQueryable()
@@ -41,9 +42,23 @@ namespace KorDevAus.Repositories
         public override async Task<User> GetAsync(Guid id)
         {
             var user = await this.Entities
+                                 .AsNoTracking()
                                  .Include(p => p.GroupUsers)
                                      .ThenInclude(p => p.Group)
                                  .SingleOrDefaultAsync(p => p.Id == id)
+                                 .ConfigureAwait(false);
+
+            return user;
+        }
+
+        /// <inheritdoc />
+        public async Task<User> GetByEmailAsync(string email)
+        {
+            var user = await this.Entities
+                                 .AsNoTracking()
+                                 .Include(p => p.GroupUsers)
+                                     .ThenInclude(p => p.Group)
+                                 .SingleOrDefaultAsync(p => p.Email.Equals(email, StringComparison.CurrentCultureIgnoreCase))
                                  .ConfigureAwait(false);
 
             return user;
